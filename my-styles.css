@@ -1,0 +1,6 @@
+.view .blackcolor::before{
+  background-color: #22222d;
+}
+.blackBackground{
+  background-color: #22222d !important; /*在业务里 important慎用*/
+}

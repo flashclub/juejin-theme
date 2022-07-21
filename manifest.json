@@ -1,0 +1,28 @@
+{
+  "name": "一键修改掘金主题",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background1.js"
+  },
+  "action": {
+    "default_title": "click me",
+    "default_icon": {              
+      "16": "icons/light.png",   
+      "24": "icons/light.png",   
+      "32": "icons/light.png"    
+    }
+  },
+  "icons":{
+    "256": "icons/light.png",   
+    "128": "icons/light.png",   
+    "64": "icons/light.png",   
+    "48": "icons/light.png"  
+  },
+  "content_scripts": [{
+    "matches": ["https://*.juejin.cn/*"],
+    "js": ["content-script.js"],
+    "css": ["my-styles.css"]
+  }],
+  "permissions":["storage", "tabs"]
+}
