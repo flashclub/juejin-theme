@@ -1,4 +1,5 @@
 import type { PlasmoContentScript } from "plasmo"
+import "../style.css"
 export const config: PlasmoContentScript = {
   matches: ["https://www.plasmo.com/*", "https://*.juejin.cn/*"]
 }
@@ -60,7 +61,9 @@ class ChangeColor {
     }
   }
   private switchTheme(reqTheme) {
+    
     this.theme = reqTheme
+    console.log('content 设置颜色', this.theme);
 
     if (reqTheme == "dark") {
       this.setDarkColor()

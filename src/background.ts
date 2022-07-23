@@ -8,7 +8,7 @@ class StartServer{
   localStorageData:string = 'light';
 
   constructor(){
-
+    this.init()
   }
   init(){
     chrome.runtime.onInstalled.addListener( ()=> {
@@ -67,4 +67,4 @@ class StartServer{
     });
   }
 }
-new StartServer().init()
+new StartServer()
