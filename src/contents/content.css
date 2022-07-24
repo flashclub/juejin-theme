@@ -14,9 +14,15 @@
   width: 100%;
 }
 
-.view .blackcolor::before{
+.view .blackBackground::before{
   background-color: #22222d;
 }
 .blackBackground{
   background-color: #22222d !important; /*在业务里 important慎用*/
+}
+.view .pinkBackground::before{
+  background-color: pink;
+}
+.pinkBackground{
+  background-color: pink !important; /*在业务里 important慎用*/
 }

@@ -1,0 +1,84 @@
+{
+  "dark": [
+    {
+      "targetElementClassName": "body",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list",
+      "className": "blackBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    }
+  ],
+
+  "light": [
+    {
+      "targetElementClassName": "body",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list",
+      "className": "",
+      "selector": "querySelectorAll",
+      "type": "background"
+    }
+  ],
+  "pink": {
+    "pinkBackground": {
+      "querySelector": ["body", "#juejin header", "#juejin header.list-header"],
+      "querySelectorAll": [
+        ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list"
+      ]
+    },
+    "blackcolor": {
+      "querySelector": [".view-nav"]
+    }
+  },
+  "allThemeClass": [
+    "blackBackground",
+    "blackcolor",
+    "pinkBackground",
+    "pinkcolor"
+  ]
+}
