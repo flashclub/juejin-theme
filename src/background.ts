@@ -12,10 +12,10 @@ class StartServer{
   }
   init(){
     chrome.runtime.onInstalled.addListener( ()=> {
-      console.log('插件安装了');
+      // console.log('插件安装了');
       this.setThemeMode('light');
       chrome.storage.local.get(['theme'], function (res) {
-        console.log('缓存的res', res.theme);
+        // console.log('缓存的res', res.theme);
         this.localStorageData = res.theme;
       });
       this.listenIconClick()
@@ -26,10 +26,10 @@ class StartServer{
     })
   }
   listenIconClick() {
-    console.log('逻辑中 chrome.action', chrome.action);
+    // console.log('逻辑中 chrome.action', chrome.action);
     chrome.action.onClicked.addListener( ()=> {
-      console.log('逻辑中 localStorageData', this.localStorageData);
       this.localStorageData = this.localStorageData == 'light' ? 'dark' : 'light';
+      console.log('逻辑中 localStorageData', this.localStorageData);
       const path = this.localStorageData == 'light' ? lightImage: darkImage
       this.setThemeMode(this.localStorageData);
       chrome.action.setIcon({ path });
@@ -40,7 +40,7 @@ class StartServer{
     chrome.tabs.query({},
       (tabs) => {
         for (var i = 0; i < tabs.length; i++) {
-          console.log('获取url', tabs[i].url);
+          // console.log('获取url', tabs[i].url);
           try {
             const location = new URL(tabs[i].url)
             const host = location.host
@@ -50,12 +50,12 @@ class StartServer{
               };
               chrome.tabs.sendMessage(tabs[i].id, message, (res) => {
                 console.log('background=>content');
-                console.log(res);
+                // console.log(res);
               });
             }
           }
           catch (e) {
-            console.log('报错',e);
+            // console.log('报错',e);
           }
         }
       }
