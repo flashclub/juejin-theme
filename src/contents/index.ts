@@ -1,5 +1,4 @@
 import type { PlasmoContentScript } from "plasmo"
-
 import "./content.css"
 
 export const config: PlasmoContentScript = {
