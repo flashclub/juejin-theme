@@ -19,6 +19,7 @@ class StartServer{
           this.setThemeMode('light');
           this.localStorageData = 'light';
         }
+        this.setIcon()
         this.listenIconClick()
       });
     });
@@ -31,11 +32,14 @@ class StartServer{
     chrome.action.onClicked.addListener( ()=> {
       console.log('逻辑中 localStorageData', this.localStorageData);
       this.localStorageData = this.localStorageData == 'light' ? 'dark' : 'light';
-      const path = this.localStorageData == 'light' ? lightImage: darkImage
       this.setThemeMode(this.localStorageData);
-      chrome.action.setIcon({ path });
+      this.setIcon()
       this.changeTabTheme()
     });
+  }
+  private setIcon(){
+    const path = this.localStorageData == 'light' ? lightImage: darkImage
+    chrome.action.setIcon({ path });
   }
   changeTabTheme(){
     chrome.tabs.query({},
