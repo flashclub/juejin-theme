@@ -34,13 +34,13 @@ class StartServer {
     return await this.storage.get(key)
   }
   listenIconClick() {
-    chrome.action.onClicked.addListener(async () => {
-      this.localStorageData =
-        this.localStorageData == "light" ? "dark" : "light"
-      await this.setThemeMode(this.localStorageData)
-      this.setIcon()
-      this.changeTabTheme()
-    })
+    // chrome.action.onClicked.addListener(async () => {
+    //   this.localStorageData =
+    //     this.localStorageData == "light" ? "dark" : "light"
+    //   await this.setThemeMode(this.localStorageData)
+    //   this.setIcon()
+    //   this.changeTabTheme()
+    // })
   }
   private setIcon() {
     const path = this.localStorageData == "light" ? lightImage : darkImage
