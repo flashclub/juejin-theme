@@ -14,7 +14,9 @@ class StartServer {
   }
   init() {
     chrome.runtime.onInstalled.addListener(async () => {
+      console.log('插件安装了');
       const data = await this.getData("theme")
+      
       if (data) {
         this.localStorageData = data
       } else {
