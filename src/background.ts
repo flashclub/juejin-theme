@@ -12,14 +12,15 @@ class StartServer{
   }
   init(){
     chrome.runtime.onInstalled.addListener( ()=> {
-      console.log('插件安装了');
-      this.setThemeMode('light');
-      chrome.storage.local.get(['theme'], function (res) {
-        console.log('缓存的res', res.theme);
-        this.localStorageData = res.theme;
+      chrome.storage.local.get(['theme'],  (res) => {
+        if (res.theme) {
+          this.localStorageData = res.theme;
+        } else {
+          this.setThemeMode('light');
+          this.localStorageData = 'light';
+        }
+        this.listenIconClick()
       });
-      this.listenIconClick()
-      // changeTabTheme()
     });
     chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
       sendResponse({theme: this.localStorageData})
