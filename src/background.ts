@@ -1,70 +1,75 @@
-import { useStorage } from "@plasmohq/storage"
 import darkImage from "data-base64:~assets/dark.png"
 import lightImage from "data-base64:~assets/light.png"
+
+import { Storage } from "@plasmohq/storage"
+
 // export {}
 console.log("HELLO WORLD FROM BGSCRIPTS")
 
-class StartServer{
-  localStorageData:string = 'light';
-
-  constructor(){
+class StartServer {
+  localStorageData: string = "light"
+  storage: any = new Storage({ area: "local" })
+  constructor() {
     this.init()
   }
-  init(){
-    chrome.runtime.onInstalled.addListener( ()=> {
-      // console.log('插件安装了');
-      this.setThemeMode('light');
-      chrome.storage.local.get(['theme'], function (res) {
-        // console.log('缓存的res', res.theme);
-        this.localStorageData = res.theme;
-      });
+  init() {
+    chrome.runtime.onInstalled.addListener(async () => {
+      console.log('插件安装了');
+      const data = await this.getData("theme")
+      
+      if (data) {
+        this.localStorageData = data
+      } else {
+        await this.setThemeMode("light")
+        this.localStorageData = "light"
+      }
+      this.setIcon()
       this.listenIconClick()
-      // changeTabTheme()
-    });
-    chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
-      sendResponse({theme: this.localStorageData})
+    })
+    chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
+      sendResponse({ theme: this.localStorageData })
     })
   }
-  listenIconClick() {
-    // console.log('逻辑中 chrome.action', chrome.action);
-    chrome.action.onClicked.addListener( ()=> {
-      this.localStorageData = this.localStorageData == 'light' ? 'dark' : 'light';
-      console.log('逻辑中 localStorageData', this.localStorageData);
-      const path = this.localStorageData == 'light' ? lightImage: darkImage
-      this.setThemeMode(this.localStorageData);
-      chrome.action.setIcon({ path });
-      this.changeTabTheme()
-    });
+  async getData(key) {
+    return await this.storage.get(key)
   }
-  changeTabTheme(){
-    chrome.tabs.query({},
-      (tabs) => {
-        for (var i = 0; i < tabs.length; i++) {
-          // console.log('获取url', tabs[i].url);
-          try {
-            const location = new URL(tabs[i].url)
-            const host = location.host
-            if (host.includes('juejin.cn')) {
-              let message = {
-                theme: this.localStorageData,
-              };
-              chrome.tabs.sendMessage(tabs[i].id, message, (res) => {
-                console.log('background=>content');
-                // console.log(res);
-              });
+  listenIconClick() {
+    // chrome.action.onClicked.addListener(async () => {
+    //   this.localStorageData =
+    //     this.localStorageData == "light" ? "dark" : "light"
+    //   await this.setThemeMode(this.localStorageData)
+    //   this.setIcon()
+    //   this.changeTabTheme()
+    // })
+  }
+  private setIcon() {
+    const path = this.localStorageData == "light" ? lightImage : darkImage
+    chrome.action.setIcon({ path })
+  }
+  changeTabTheme() {
+    chrome.tabs.query({}, (tabs) => {
+      for (var i = 0; i < tabs.length; i++) {
+        console.log("获取url", tabs[i].url)
+        try {
+          const location = new URL(tabs[i].url)
+          const host = location.host
+          if (host.includes("juejin.cn")) {
+            let message = {
+              theme: this.localStorageData
             }
+            chrome.tabs.sendMessage(tabs[i].id, message, (res) => {
+              console.log("background=>content")
+              console.log(res)
+            })
           }
-          catch (e) {
-            // console.log('报错',e);
-          }
+        } catch (e) {
+          console.log("报错", e)
         }
       }
-    );
+    })
   }
-  setThemeMode(mode) {
-    chrome.storage.local.set({ theme: mode }, function(){
-      console.log('设置了theme', mode);
-    });
+  async setThemeMode(mode) {
+    await this.storage.set("theme", mode)
   }
 }
 new StartServer()

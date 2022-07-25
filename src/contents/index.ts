@@ -1,10 +1,9 @@
 import type { PlasmoContentScript } from "plasmo"
-
 import "./content.css"
 
-export const config: PlasmoContentScript = {
-  matches: ["https://www.plasmo.com/*", "https://*.juejin.cn/*"]
-}
+// export const config: PlasmoContentScript = {
+//   matches: ["https://www.plasmo.com/*", "https://*.juejin.cn/*"]
+// }
 
 class ChangeColor {
   theme: string = "light"
