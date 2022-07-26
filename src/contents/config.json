@@ -13,6 +13,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header .logo img",
+      "className": "whiteImg",
+      "selector": "querySelector",
+      "type": "img"
+    },
+    {
+      "targetElementClassName": "#juejin .nav-list.left",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header .phone-hide",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
       "targetElementClassName": "#juejin header.list-header",
       "className": "blackBackground",
       "selector": "querySelector",
@@ -46,6 +64,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header .logo img",
+      "className": "",
+      "selector": "querySelector",
+      "type": "img"
+    },
+    {
+      "targetElementClassName": "#juejin .nav-list.left",
+      "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header .phone-hide",
+      "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
       "targetElementClassName": "#juejin header.list-header",
       "className": "",
       "selector": "querySelector",
@@ -58,19 +94,13 @@
       "type": "background"
     },
     {
-      "targetElementClassName": ".entry-list-wrap .entry-list .entry",
-      "className": "",
-      "selector": "querySelectorAll",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list",
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
       "className": "",
       "selector": "querySelectorAll",
       "type": "background"
     }
   ],
-  "klein":[
+  "klein": [
     {
       "targetElementClassName": "body",
       "className": "kleinBackground",
@@ -84,6 +114,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header .logo img",
+      "className": "whiteImg",
+      "selector": "querySelector",
+      "type": "img"
+    },
+    {
+      "targetElementClassName": "#juejin .nav-list.left",
+      "className": "napoliFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header .phone-hide",
+      "className": "napoliFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
       "targetElementClassName": "#juejin header.list-header",
       "className": "kleinBackground",
       "selector": "querySelector",
@@ -96,13 +144,7 @@
       "type": "background"
     },
     {
-      "targetElementClassName": ".entry-list-wrap .entry-list .entry",
-      "className": "kleinBackground",
-      "selector": "querySelectorAll",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list",
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
       "className": "kleinBackground",
       "selector": "querySelectorAll",
       "type": "background"
@@ -120,14 +162,20 @@
     }
   },
   "allThemeClass": {
-    "dark":{
-      "background":"blackBackground"
+    "dark": {
+      "background": "blackBackground",
+      "fontcolor": "whiteFontcolor",
+      "img": "whiteImg"
     },
-    "light":{
-      "background":""
+    "light": {
+      "background": "",
+      "fontcolor": "",
+      "img": ""
     },
-    "klein":{
-      "background":"kleinBackground"
+    "klein": {
+      "background": "kleinBackground",
+      "fontcolor": "napoliFontcolor",
+      "img": "whiteImg"
     }
   }
 }

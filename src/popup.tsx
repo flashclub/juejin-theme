@@ -13,7 +13,7 @@ function IndexPopup() {
     await storage.set("theme", theme)
     const msg = { theme }
     changeTabTheme(msg)
-    setData(theme)
+    // setData(theme)
   }
   function changeTabTheme(message) {
     chrome.tabs.query({}, (tabs) => {
