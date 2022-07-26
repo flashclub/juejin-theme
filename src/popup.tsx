@@ -9,7 +9,7 @@ function IndexPopup() {
   const storage = new Storage({ area:"local"})
 
   async function clickDark(theme) {
-    console.log("点击了黑色")
+    console.log("点击了", theme)
     await storage.set("theme", theme)
     const msg = { theme }
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

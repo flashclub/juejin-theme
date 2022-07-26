@@ -10,7 +10,14 @@ class ChangeColor {
   observerObject: any = null
   config = require("./config.json")
   classList = Object.keys(this.config)
-  nowClass = {}
+  nowClass = {
+    old:{
+      background:''
+    },
+    new:{
+      background:''
+    }
+  }
   oldType = ''
   constructor() {
     console.log("初始化", this.config, this.classList)
@@ -27,6 +34,7 @@ class ChangeColor {
       const { theme } = request
       this.theme = theme
       this.switchTheme()
+      this.nowClass.old = JSON.parse(JSON.stringify(this.nowClass.new))
     })
   }
   private switchTheme() {
@@ -52,8 +60,18 @@ class ChangeColor {
           const elements = document.querySelectorAll(
             ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list"
           )
-          if (elements) {
-            that.removeClassList()
+          console.log('运行callback');
+          
+          // if (elements) {
+          //   that.removeClassList()
+          // }
+          const doms = this.selectMoreElement('querySelectorAll', ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list")
+          const className = this.nowClass.new.background
+          if (className) {
+            
+            for (const element of doms) {
+              this.updateObserveElement(element, className, 'background')
+            }
           }
           break
       }
@@ -66,29 +84,40 @@ class ChangeColor {
     console.log('config 配置--', config, theme);
     if (config.length) {
       for (const rules of config) {
-        const { targetElementClassName, className, selector, type } = rules
+        const { targetElementClassName, className = '', selector, type } = rules
         if (selector === "querySelector" || nowTargetElement) {
           const targetElement =
             nowTargetElement ||
             this.canRemoveClass(selector, targetElementClassName)
-          if (!this.oldType) {
-            this.oldType = className
-          }
-          if (this.oldType != className) {
-            targetElement.classList.remove(this.oldType)
+          console.log('old ', this.nowClass.old[type]);
+          console.log('now classname ', className);
+          // 旧的是dark 新的是 ''
+          // 旧的是'' 新的是dark
+          // 旧的是dark 新的是klean
+          if (this.nowClass.old[type] !== className) {
+            const oldClass = this.nowClass.old[type]
+            oldClass ? targetElement.classList.remove(oldClass): targetElement.classList.remove(className)
+            console.log('移除 2 classname', targetElement.classList);
           }
           if (className) {
-            console.log('添加classname', className);
-            ownType = className
             targetElement.classList.add(className)
+            this.nowClass.new[type] = className
           }
         } else if (selector === "querySelectorAll") {
           const doms = this.selectMoreElement(selector, targetElementClassName)
           for (const element of doms) {
-            this.removeClassList(element, className)
+            this.updateObserveElement(element, className, type)
           }
         }
       }
+      
+    }
+  }
+  private updateObserveElement(element, className, type){
+    const oldClass = this.nowClass.old[type]
+    oldClass && element.classList.remove(oldClass)
+    if (className) { 
+      element.classList.add(className)  
     }
   }
   private selectMoreElement(selector, element) {

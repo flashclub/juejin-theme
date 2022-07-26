@@ -25,13 +25,7 @@
       "type": "background"
     },
     {
-      "targetElementClassName": ".entry-list-wrap .entry-list .entry",
-      "className": "blackBackground",
-      "selector": "querySelectorAll",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list",
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
       "className": "blackBackground",
       "selector": "querySelectorAll",
       "type": "background"
@@ -125,10 +119,15 @@
       "querySelector": [".view-nav"]
     }
   },
-  "allThemeClass": [
-    "blackBackground",
-    "blackcolor",
-    "pinkBackground",
-    "pinkcolor"
-  ]
+  "allThemeClass": {
+    "dark":{
+      "background":"blackBackground"
+    },
+    "light":{
+      "background":""
+    },
+    "klein":{
+      "background":"kleinBackground"
+    }
+  }
 }
