@@ -4,9 +4,9 @@ import "./content.css"
 
 import { Storage } from "@plasmohq/storage"
 
-// export const config: PlasmoContentScript = {
-//   matches: ["https://www.plasmo.com/*", "https://*.juejin.cn/*"]
-// }
+export const config: PlasmoContentScript = {
+  matches: ["https://*.juejin.cn/*"]
+}
 
 class ChangeColor {
   theme: string = "light"
