@@ -12,12 +12,27 @@ function IndexPopup() {
     console.log("点击了", theme)
     await storage.set("theme", theme)
     const msg = { theme }
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
-        console.log("popup返回--", response)
-      })
-    })
+    changeTabTheme(msg)
     setData(theme)
+  }
+  function changeTabTheme(message) {
+    chrome.tabs.query({}, (tabs) => {
+      for (var i = 0; i < tabs.length; i++) {
+        console.log("获取url", tabs[i].url)
+        try {
+          const location = new URL(tabs[i].url)
+          const host = location.host
+          if (host.includes("juejin.cn")) {
+            chrome.tabs.sendMessage(tabs[i].id, message, (res) => {
+              console.log("background=>content")
+              console.log(res)
+            })
+          }
+        } catch (e) {
+          console.log("报错", e)
+        }
+      }
+    })
   }
   return (
     <div className="w-80 grid grid-cols-2 gap-4 p-5 ">
