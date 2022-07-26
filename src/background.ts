@@ -14,9 +14,9 @@ class StartServer {
   }
   init() {
     chrome.runtime.onInstalled.addListener(async () => {
-      console.log("插件安装了")
       const data = await this.getData("theme")
-
+      
+      console.log("插件安装了 获取data", data )
       if (data) {
         this.localStorageData = data
       } else {
@@ -24,10 +24,12 @@ class StartServer {
         this.localStorageData = "light"
       }
       this.setIcon()
-      this.listenIconClick()
+      // this.listenIconClick()
     })
-    chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
-      sendResponse({ theme: this.localStorageData })
+    chrome.runtime.onMessage.addListener( (req, sender, sendResponse) => {
+      console.log('--data- 主题', req, this.localStorageData);
+      const {theme} = req
+      sendResponse({ theme: theme || this.localStorageData })
     })
   }
   async getData(key) {

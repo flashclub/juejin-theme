@@ -1,5 +1,6 @@
 import type { PlasmoContentScript } from "plasmo"
 import "./content.css"
+import { Storage } from "@plasmohq/storage"
 
 // export const config: PlasmoContentScript = {
 //   matches: ["https://www.plasmo.com/*", "https://*.juejin.cn/*"]
@@ -10,6 +11,7 @@ class ChangeColor {
   observerObject: any = null
   config = require("./config.json")
   classList = Object.keys(this.config)
+  storage: any = new Storage({ area: "local" })
   nowClass = {
     old:{
       background:''
@@ -23,9 +25,16 @@ class ChangeColor {
     console.log("初始化", this.config, this.classList)
     this.init()
   }
-  init() {
-    chrome.runtime.sendMessage({}, (res) => {
+  async init() {
+    const data = await this.getData("theme")
+    console.log('content theme data---', data);
+    
+    chrome.runtime.sendMessage({theme: data},  async (res) => {
+      console.log('--content res--', res);
+      
       const { theme } = res
+      console.log('获取 theme', theme);
+
       this.theme = theme
       this.nowClass.old = this.config.allThemeClass[theme]
       this.switchTheme()
@@ -33,10 +42,15 @@ class ChangeColor {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse("得到了结果")
       const { theme } = request
+      console.log('获取 theme', theme);
+      
       this.theme = theme
       this.switchTheme()
       this.nowClass.old = JSON.parse(JSON.stringify(this.nowClass.new))
     })
+  }
+  async getData(key) {
+    return await this.storage.get(key)
   }
   private switchTheme() {
     this.removeClassList()
