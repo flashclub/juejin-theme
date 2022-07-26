@@ -1,9 +1,10 @@
 {
   "name": "juejin-theme",
-  "displayName": "配置掘金主题",
-  "version": "0.0.0",
-  "description": "A basic Plasmo extension.",
+  "version": "1.0.5",
+  "displayName": "一键修改掘金主题",
+  "description": "提供丰富的主题样式，全新主题 克莱因蓝上线 快来体验吧",
   "author": "laughing",
+  "homepage": "https://www.amzbest.info/",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build"
