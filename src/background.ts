@@ -14,9 +14,9 @@ class StartServer {
   }
   init() {
     chrome.runtime.onInstalled.addListener(async () => {
-      console.log('插件安装了');
+      console.log("插件安装了")
       const data = await this.getData("theme")
-      
+
       if (data) {
         this.localStorageData = data
       } else {
@@ -36,7 +36,7 @@ class StartServer {
   listenIconClick() {
     // chrome.action.onClicked.addListener(async () => {
     //   this.localStorageData =
-    //     this.localStorageData == "light" ? "dark" : "light"
+    //     this.localStorageData == 'light' ? "dark" : 'light'
     //   await this.setThemeMode(this.localStorageData)
     //   this.setIcon()
     //   this.changeTabTheme()

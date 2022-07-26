@@ -20,9 +20,16 @@
 .blackBackground{
   background-color: #22222d !important; /*在业务里 important慎用*/
 }
+
 .view .pinkBackground::before{
   background-color: pink;
 }
 .pinkBackground{
   background-color: pink !important; /*在业务里 important慎用*/
+}
+.view .kleinBackground::before{
+  background-color: #002ea6;
+}
+.kleinBackground{
+  background-color: #002ea6 !important; /*在业务里 important慎用*/
 }

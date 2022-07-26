@@ -25,7 +25,13 @@
       "type": "background"
     },
     {
-      "targetElementClassName": ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list",
+      "targetElementClassName": ".entry-list-wrap .entry-list .entry",
+      "className": "blackBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list",
       "className": "blackBackground",
       "selector": "querySelectorAll",
       "type": "background"
@@ -58,8 +64,52 @@
       "type": "background"
     },
     {
-      "targetElementClassName": ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list",
+      "targetElementClassName": ".entry-list-wrap .entry-list .entry",
       "className": "",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list",
+      "className": "",
+      "selector": "querySelectorAll",
+      "type": "background"
+    }
+  ],
+  "klein":[
+    {
+      "targetElementClassName": "body",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list .entry",
+      "className": "kleinBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list",
+      "className": "kleinBackground",
       "selector": "querySelectorAll",
       "type": "background"
     }

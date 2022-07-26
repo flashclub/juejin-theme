@@ -11,6 +11,7 @@ class ChangeColor {
   config = require("./config.json")
   classList = Object.keys(this.config)
   nowClass = {}
+  oldType = ''
   constructor() {
     console.log("初始化", this.config, this.classList)
     this.init()
@@ -59,9 +60,10 @@ class ChangeColor {
     })
   }
 
-  private removeClassList(nowTargetElement?) {
+  private removeClassList(nowTargetElement?, ownType?) {
     const theme = this.theme
     const config = this.config[theme]
+    console.log('config 配置--', config, theme);
     if (config.length) {
       for (const rules of config) {
         const { targetElementClassName, className, selector, type } = rules
@@ -69,16 +71,21 @@ class ChangeColor {
           const targetElement =
             nowTargetElement ||
             this.canRemoveClass(selector, targetElementClassName)
-          this.nowClass[type] &&
-            targetElement.classList.remove(this.nowClass[type])
+          if (!this.oldType) {
+            this.oldType = className
+          }
+          if (this.oldType != className) {
+            targetElement.classList.remove(this.oldType)
+          }
           if (className) {
-            this.nowClass[type] = className
+            console.log('添加classname', className);
+            ownType = className
             targetElement.classList.add(className)
           }
         } else if (selector === "querySelectorAll") {
           const doms = this.selectMoreElement(selector, targetElementClassName)
           for (const element of doms) {
-            this.removeClassList(element)
+            this.removeClassList(element, className)
           }
         }
       }

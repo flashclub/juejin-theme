@@ -6,14 +6,20 @@ module.exports = {
   theme: {
     extend:{
       colors:{
-        "regal-dark":{
+        "dark":{
           "600":"#22222d",
-          "700":"#11111d"
+          "700":"#111117"
         },
-        "klein":{
-          "600": "#002EA6",
-          "700": "#002EA6"
+        "klein":{ //克莱因蓝
+          "light":"#002ea6",
+          "600": "#002ea6",
+          "700": "#01227a"
         },
+        "napoli": { //拿坡里黄
+          "light": "#ffe78f",
+          "600": "#ffe78f",
+          "700": "#fee27f"
+        }
       }
     },
     fontFamily: {
