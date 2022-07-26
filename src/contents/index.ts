@@ -18,7 +18,7 @@ class ChangeColor {
       background:''
     }
   }
-  oldType = ''
+  alreadyInitOldType:boolean = false
   constructor() {
     console.log("初始化", this.config, this.classList)
     this.init()
@@ -27,6 +27,7 @@ class ChangeColor {
     chrome.runtime.sendMessage({}, (res) => {
       const { theme } = res
       this.theme = theme
+      this.nowClass.old = this.config.allThemeClass[theme]
       this.switchTheme()
     })
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -78,31 +79,32 @@ class ChangeColor {
     })
   }
 
-  private removeClassList(nowTargetElement?, ownType?) {
+  private removeClassList() {
     const theme = this.theme
     const config = this.config[theme]
     console.log('config 配置--', config, theme);
     if (config.length) {
       for (const rules of config) {
         const { targetElementClassName, className = '', selector, type } = rules
-        if (selector === "querySelector" || nowTargetElement) {
-          const targetElement =
-            nowTargetElement ||
-            this.canRemoveClass(selector, targetElementClassName)
-          console.log('old ', this.nowClass.old[type]);
+        if (selector === "querySelector" ) {
+          const targetElement = this.canRemoveClass(selector, targetElementClassName)
+          console.log('old classname', this.nowClass.old[type]);
           console.log('now classname ', className);
           // 旧的是dark 新的是 ''
           // 旧的是'' 新的是dark
           // 旧的是dark 新的是klean
           if (this.nowClass.old[type] !== className) {
             const oldClass = this.nowClass.old[type]
-            oldClass ? targetElement.classList.remove(oldClass): targetElement.classList.remove(className)
+            console.log('移除 1 classname', targetElement.classList);
+
+            oldClass && targetElement.classList.remove(oldClass)
             console.log('移除 2 classname', targetElement.classList);
           }
           if (className) {
             targetElement.classList.add(className)
-            this.nowClass.new[type] = className
           }
+          this.nowClass.new[type] = className
+
         } else if (selector === "querySelectorAll") {
           const doms = this.selectMoreElement(selector, targetElementClassName)
           for (const element of doms) {
