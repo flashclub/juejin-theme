@@ -35,40 +35,9 @@ class StartServer {
   async getData(key) {
     return await this.storage.get(key)
   }
-  listenIconClick() {
-    // chrome.action.onClicked.addListener(async () => {
-    //   this.localStorageData =
-    //     this.localStorageData == 'light' ? "dark" : 'light'
-    //   await this.setThemeMode(this.localStorageData)
-    //   this.setIcon()
-    //   this.changeTabTheme()
-    // })
-  }
   private setIcon() {
     const path = this.localStorageData == "light" ? lightImage : darkImage
     chrome.action.setIcon({ path })
-  }
-  changeTabTheme() {
-    chrome.tabs.query({}, (tabs) => {
-      for (var i = 0; i < tabs.length; i++) {
-        console.log("获取url", tabs[i].url)
-        try {
-          const location = new URL(tabs[i].url)
-          const host = location.host
-          if (host.includes("juejin.cn")) {
-            let message = {
-              theme: this.localStorageData
-            }
-            chrome.tabs.sendMessage(tabs[i].id, message, (res) => {
-              console.log("background=>content")
-              console.log(res)
-            })
-          }
-        } catch (e) {
-          console.log("报错", e)
-        }
-      }
-    })
   }
   async setThemeMode(mode) {
     await this.storage.set("theme", mode)

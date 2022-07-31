@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 import { Storage, useStorage } from "@plasmohq/storage"
 
 import "./popup.css"
