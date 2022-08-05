@@ -75,7 +75,7 @@ class ChangeColor {
       childList: true, // 观察目标子节点的变化，是否有添加或者删除
       subtree: true
     }
-    if (!this.observerObject) {
+    if (!this.observerObject && targetNode) {
       this.observerObject = new MutationObserver(this.callback.bind(this))
       this.observerObject.observe(targetNode, observerOptions)
     }
@@ -115,7 +115,7 @@ class ChangeColor {
         }
       })
     }
-    if (!this.navObserver) {
+    if (!this.navObserver && targetNode) {
       this.navObserver = new MutationObserver(callback.bind(this))
       this.navObserver.observe(targetNode, observerOptions)
     }
@@ -134,7 +134,7 @@ class ChangeColor {
         }
       })
     }
-    if (!this.headerObserver) {
+    if (!this.headerObserver && targetNode) {
       this.headerObserver = new MutationObserver(callback.bind(this))
       this.headerObserver.observe(targetNode, observerOptions)
     }
@@ -191,7 +191,25 @@ class ChangeColor {
       : document.querySelector("body")
   }
 }
+let oldHref = document.location.href
 window.addEventListener("load", () => {
   console.log("content script loaded")
   const changeColor = new ChangeColor()
+  var bodyList = document.querySelector("body")
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (oldHref != document.location.href) {
+        oldHref = document.location.href
+        /* Changed ! your code here */
+        console.log("链接变了")
+        const changeColor = new ChangeColor()
+      }
+    })
+  })
+
+  var config = {
+    childList: true,
+    subtree: true
+  }
+  observer.observe(bodyList, config)
 })

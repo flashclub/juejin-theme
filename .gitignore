@@ -9,6 +9,8 @@
 # testing
 /coverage
 
+yarn.lock
+
 #cache
 .turbo
 .next
