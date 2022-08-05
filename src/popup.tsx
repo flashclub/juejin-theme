@@ -45,6 +45,11 @@ function IndexPopup() {
           默认主题
         </div>
         <div
+          className="grow cursor-pointer flex items-center justify-center px-2 py-3 border border-2 border-black text-base font-medium rounded-md text-black bg-white-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10"
+          onClick={() => clickDark("colors")}>
+          幻彩
+        </div>
+        <div
           className="grow cursor-pointer flex items-center justify-center px-2 py-3 border border-transparent text-base font-medium rounded-md text-white bg-dark-600 hover:bg-dark-700 md:py-4 md:text-lg md:px-10"
           onClick={() => clickDark("dark")}>
           黑色主题

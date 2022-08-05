@@ -1,6 +1,7 @@
 import type { PlasmoContentScript } from "plasmo"
 
 import "./content.css"
+import "./colors.css"
 
 import { Storage } from "@plasmohq/storage"
 

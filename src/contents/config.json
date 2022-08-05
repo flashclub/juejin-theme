@@ -1,4 +1,54 @@
 {
+  "colors": [
+    {
+      "targetElementClassName": "body",
+      "className": "colorsBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header",
+      "className": "colorsBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header .logo img",
+      "className": "whiteImg",
+      "selector": "querySelector",
+      "type": "img"
+    },
+    {
+      "targetElementClassName": "#juejin .nav-list.left",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header .phone-hide",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "colorsBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "colorsBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
+      "className": "colorsBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    }
+  ],
   "dark": [
     {
       "targetElementClassName": "body",
@@ -201,6 +251,11 @@
     }
   ],
   "allThemeClass": {
+    "colors": {
+      "background": "colorsBackground",
+      "fontcolor": "whiteFontcolor",
+      "img": "whiteImg"
+    },
     "dark": {
       "background": "blackBackground",
       "fontcolor": "whiteFontcolor",

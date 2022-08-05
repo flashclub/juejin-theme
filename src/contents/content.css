@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 .blackBackground, .blackBackground .main-header .container{
-  background-color: #22222d !important; /*在业务里 important慎用*/
+  background-color: #22222d !important; 
 }
 .blackBackground .list-nav .nav-list .nav-item:not(.active) a,
 .blackBackground li .tag,
@@ -32,7 +32,7 @@
   background-color: #002ea6;
 }
 .kleinBackground, .kleinBackground .main-header .container{
-  background-color: #002ea6 !important; /*在业务里 important慎用*/
+  background-color: #002ea6 !important;
 }
 .kleinBackground .list-nav .nav-list .nav-item:not(.active) a,
 .kleinBackground li .tag,
@@ -53,7 +53,7 @@
   background-color: #f9c1d2;
 }
 .pinkBackground, .pinkBackground .main-header .container{
-  background-color: rgba(294, 192, 210, 1) !important; /*在业务里 important慎用*/
+  background-color: rgba(294, 192, 210, 1) !important; 
 }
 .pinkBackground .list-nav .nav-list .nav-item:not(.active) a,
 .pinkBackground li .tag,
@@ -77,14 +77,14 @@
 .whiteFontcolor .nav-item:not(.active) .text,
 .whiteFontcolor .nav-item:not(.active) a,
 .whiteFontcolor .title{
-  color: #fff !important; /*在业务里 important慎用*/
+  color: #fff !important; 
 }
 /* 黄色字体 */
 .napoliFontcolor .nav-item:not(.active),
 .napoliFontcolor .nav-item:not(.active) .text,
 .napoliFontcolor .nav-item:not(.active) a,
 .napoliFontcolor .title{
-  color: #ffe78f !important; /*在业务里 important慎用*/
+  color: #ffe78f !important; 
 }
 
 /* logo 背景图 */
