@@ -1,62 +1,96 @@
-.new-tab {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: #333;
-  display: block;
-  font-size: 12px;
-  line-height: 16px;
-  margin: 0 0 10px;
-  padding: 10px;
-  position: relative;
-  text-decoration: none;
-  width: 100%;
-}
+/* ---------------------背景--------------------- */
+/*在业务里 important慎用*/
 
+/* 黑色背景 */
 .view .blackBackground::before{
   background-color: #22222d;
 }
-.blackBackground{
+.blackBackground .entry-list-container {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.blackBackground, .blackBackground .main-header .container{
   background-color: #22222d !important; /*在业务里 important慎用*/
 }
-/*在业务里 important慎用*/
+.blackBackground .list-nav .nav-list .nav-item:not(.active) a,
+.blackBackground li .tag,
+.blackBackground li .meta-container,
+.blackBackground li .meta-container a,
+.blackBackground li .meta-container .date,
+.blackBackground li .content-main .title,
+.blackBackground li .content-main .abstract a,
+.blackBackground li .content-main .action-list .item,
 .blackBackground li .main .title,
-.blackBackground li .content-main .title{
+.blackBackground li .main .description{
   color: #fff !important; 
+  border-color: #fff !important;
 }
 
+/* 蓝色背景 */
 .view .kleinBackground::before{
   background-color: #002ea6;
 }
-.kleinBackground{
+.kleinBackground, .kleinBackground .main-header .container{
   background-color: #002ea6 !important; /*在业务里 important慎用*/
 }
+.kleinBackground .list-nav .nav-list .nav-item:not(.active) a,
+.kleinBackground li .tag,
+.kleinBackground li .meta-container,
+.kleinBackground li .meta-container a,
+.kleinBackground li .meta-container .date,
+.kleinBackground li .content-main .title,
+.kleinBackground li .content-main .abstract a,
+.kleinBackground li .content-main .action-list .item,
 .kleinBackground li .main .title,
-.kleinBackground li .content-main .title{
+.kleinBackground li .main .description{
   color: #ffe78f !important; 
+  border-color: #ffe78f !important;
 }
 
+/* 粉色背景 */
+.view .pinkBackground::before{
+  background-color: #f9c1d2;
+}
+.pinkBackground, .pinkBackground .main-header .container{
+  background-color: rgba(294, 192, 210, 1) !important; /*在业务里 important慎用*/
+}
+.pinkBackground .list-nav .nav-list .nav-item:not(.active) a,
+.pinkBackground li .tag,
+.pinkBackground li .meta-container,
+.pinkBackground li .meta-container a,
+.pinkBackground li .meta-container .date,
+.pinkBackground li .content-main .title,
+.pinkBackground li .content-main .abstract a,
+.pinkBackground li .content-main .action-list .item,
+.pinkBackground li .main .title,
+.pinkBackground li .main .description{
+  color: #fff !important; 
+  border-color: #fff !important;
+}
+
+
+/* ---------------------字体--------------------- */
+
+/* 白色字体 */
 .whiteFontcolor .nav-item:not(.active),
 .whiteFontcolor .nav-item:not(.active) .text,
+.whiteFontcolor .nav-item:not(.active) a,
 .whiteFontcolor .title{
   color: #fff !important; /*在业务里 important慎用*/
 }
-
+/* 黄色字体 */
 .napoliFontcolor .nav-item:not(.active),
 .napoliFontcolor .nav-item:not(.active) .text,
+.napoliFontcolor .nav-item:not(.active) a,
 .napoliFontcolor .title{
   color: #ffe78f !important; /*在业务里 important慎用*/
 }
 
+/* logo 背景图 */
 .whiteImg{
   background: #fff;
   box-shadow: 0 0 5px 5px #fff;
 }
 
-.view .pinkBackground::before{
-  background-color: pink;
-}
-.pinkBackground{
-  background-color: pink !important; /*在业务里 important慎用*/
-}
+

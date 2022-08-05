@@ -150,17 +150,56 @@
       "type": "background"
     }
   ],
-  "pink": {
-    "pinkBackground": {
-      "querySelector": ["body", "#juejin header", "#juejin header.list-header"],
-      "querySelectorAll": [
-        ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list"
-      ]
+  "pink": [
+    {
+      "targetElementClassName": "body",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
     },
-    "blackcolor": {
-      "querySelector": [".view-nav"]
+    {
+      "targetElementClassName": "#juejin header",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin header .logo img",
+      "className": "whiteImg",
+      "selector": "querySelector",
+      "type": "img"
+    },
+    {
+      "targetElementClassName": "#juejin .nav-list.left",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header .phone-hide",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
+      "className": "pinkBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
     }
-  },
+  ],
   "allThemeClass": {
     "dark": {
       "background": "blackBackground",
@@ -175,6 +214,11 @@
     "klein": {
       "background": "kleinBackground",
       "fontcolor": "napoliFontcolor",
+      "img": "whiteImg"
+    },
+    "pink": {
+      "background": "pinkBackground",
+      "fontcolor": "whiteFontcolor",
       "img": "whiteImg"
     }
   }

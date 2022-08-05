@@ -19,6 +19,11 @@ module.exports = {
           "light": "#ffe78f",
           "600": "#ffe78f",
           "700": "#fee27f"
+        },
+        "pink":{  //猛男粉
+          "light": "#f9c1d2",
+          "600": "#f9c1d2",
+          "700": "#f99fbb"
         }
       }
     },

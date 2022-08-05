@@ -1,6 +1,6 @@
 {
   "name": "juejin-theme",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "displayName": "一键修改掘金主题",
   "description": "提供丰富的主题样式，除了标准模式和暗夜模式，全新上线了克莱因蓝主题，快来体验吧",
   "author": "laughing",
@@ -8,13 +8,14 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "zip":"plasmo build --zip"
+    "zip": "plasmo build --zip"
   },
   "dependencies": {
     "@plasmohq/storage": "^0.8.1",
     "plasmo": "0.48.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0",
     "tailwindcss": "^3.1.6"
   },
   "devDependencies": {
