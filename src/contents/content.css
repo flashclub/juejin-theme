@@ -44,6 +44,15 @@
 .whiteFontcolor li .content-main .action-list .item{    /*列表 文章 观看 评论 点赞*/
   color: #fff !important; 
 }
+.whiteFontcolor li .content-main .title{
+  transition: 0.5s;
+}
+.whiteFontcolor li .content-main .title:hover{
+  /* transform: scale(1.5) */
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
 /* 黄色 */
 .napoliFontcolor .nav-item:not(.active),   /*列表 顶部nav 等*/
 .napoliFontcolor .nav-item:not(.active) a, /*列表 顶部nav 等*/

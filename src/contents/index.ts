@@ -79,6 +79,11 @@ class ChangeColor {
       const body = document.querySelector('body');
       demoDiv.insertAdjacentElement('afterbegin', demoDivChildren)
       body.insertAdjacentElement('afterbegin', demoDiv)
+    } else {
+      const colors = document.querySelector('body .theme-colors')
+      if (colors) {
+        colors.remove()
+      }
     }
   }
   // 文章列表
