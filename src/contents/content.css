@@ -44,6 +44,10 @@
 .whiteFontcolor li .content-main .action-list .item{    /*列表 文章 观看 评论 点赞*/
   color: #fff !important; 
 }
+.whiteFontcolor li .meta-container a::after{
+  background-color: #fff !important;
+}
+
 .whiteFontcolor li .content-main .title{
   transition: 0.5s;
 }
@@ -64,6 +68,9 @@
 .napoliFontcolor li .content-main .abstract a,   /*列表 文章 描述*/
 .napoliFontcolor li .content-main .action-list .item{    /*列表 文章 观看 评论 点赞*/
   color: #ffe78f !important; 
+}
+.whiteFontcolor li .meta-container a::after{
+  background-color: #ffe78f !important;
 }
 
 /* logo 背景图 */

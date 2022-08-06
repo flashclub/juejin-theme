@@ -3,7 +3,10 @@ body.colorsBackground{
   max-height: 100vh !important;
 }
 header.main-header.colorsBackground{
-  background-color: #fff !important;
+  /* background-color: #fff !important; */
+}
+.view-nav.colorsBackground::before{
+  height:233%;
 }
 .theme-colors {
   /* position: relative; */
