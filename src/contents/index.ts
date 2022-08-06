@@ -63,10 +63,23 @@ class ChangeColor {
   }
   private switchTheme() {
     this.removeClassList()
-
+    this.colorsChange()
     this.observeDom()
     this.checkNav()
     this.checkMainheader()
+  }
+  // 幻彩特殊处理的
+  private colorsChange() {
+    console.log('--theme--', this.theme);
+    if (this.theme === 'colors') {
+      const demoDiv = document.createElement('div')
+      const demoDivChildren = document.createElement('div')
+      demoDiv.className = 'theme-colors'
+      demoDivChildren.className = 'children-colors'
+      const body = document.querySelector('body');
+      demoDiv.insertAdjacentElement('afterbegin', demoDivChildren)
+      body.insertAdjacentElement('afterbegin', demoDiv)
+    }
   }
   // 文章列表
   private observeDom() {

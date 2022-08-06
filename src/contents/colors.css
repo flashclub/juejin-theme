@@ -1,7 +1,11 @@
-body.colorsBackground {
-  position: relative;
-  z-index: 1;
-  
+body{
+  max-height: 100vh !important;
+}
+.theme-colors {
+  /* position: relative; */
+  /* z-index: 1; */
+  /* width: auto; */
+  /* height: auto; */
 }
 
 @keyframes move {
@@ -78,9 +82,7 @@ body.colorsBackground {
   }
 }
 
-body.colorsBackground:after {
-  content: " ";
-
+.theme-colors{
   background-color: #e493D0;
   /* 背景图片 */
   background-image:
@@ -107,19 +109,20 @@ body.colorsBackground:after {
 
   background-repeat: no-repeat;
   /* 调用动画 */
-  animation: 2s move linear infinite;
+  /* animation: 2s move linear infinite; */
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  max-height: 100vh;
+
+  position: fixed;
   left: 0;
-  top: 0;
-  /* background: inherit; */
+  bottom: 0;
   z-index: 2;
-  filter: blur(10px);
-  backdrop-filter: blur(10px);
+  /* filter: blur(10px); */
+  /* backdrop-filter: blur(10px); */
 }
 
-body.colorsBackground #__nuxt {
+body #__nuxt {
   position: relative;
   z-index: 11;
 }
@@ -136,7 +139,6 @@ body.colorsBackground #__nuxt {
   background-color: #fff;
 }
 .colorsBackground {
-  backdrop-filter: blur(50px);
+  /* backdrop-filter: blur(50px); */
   background: transparent !important;
-
 }
