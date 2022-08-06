@@ -68,6 +68,7 @@ class ChangeColor {
     this.checkNav()
     this.checkMainheader()
   }
+  // 文章列表
   private observeDom() {
     // console.log("监听 list")
 
@@ -86,20 +87,29 @@ class ChangeColor {
     mutationList.forEach((mutation) => {
       switch (mutation.type) {
         case "childList":
-          const doms = this.selectMoreElement(
+          const allDom = this.selectMoreElement(
             "querySelectorAll",
             ".entry-list-wrap .entry-list .entry, .entry-list-wrap .entry-list"
           )
-          const className = this.nowClass.new.background
-          if (className) {
-            for (const element of doms) {
-              this.updateObserveElement(element, className, "background")
+          const dom = this.selectMoreElement(
+            "querySelector",
+            "#juejin .entry-list-container"
+          )
+          const backgroundClass = this.nowClass.new.background
+          const fontcolorClass = this.nowClass.new.fontcolor
+          if (backgroundClass) {
+            for (const element of allDom) {
+              this.updateObserveElement(element, backgroundClass, "background")
             }
+          }
+          if (fontcolorClass) {
+            this.updateObserveElement(dom, fontcolorClass, "fontcolor")
           }
           break
       }
     })
   }
+  // 第二行nav
   private checkNav() {
     const targetNode = document.querySelector(
       "#juejin .view.timeline-index-view .view-nav"
@@ -182,8 +192,14 @@ class ChangeColor {
     }
   }
   private selectMoreElement(selector, element) {
+    
     const elements = document[selector](element)
-    return elements ? [...elements] : [document.querySelector("body")]
+    // console.log('选择element', selector, element, document[selector](element));
+    if (selector === 'querySelector') {
+      return elements
+    } else {
+      return [...elements]
+    }
   }
 
   private canRemoveClass(selector, element) {

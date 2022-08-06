@@ -13,19 +13,6 @@
 .blackBackground, .blackBackground .main-header .container{
   background-color: #22222d !important; 
 }
-.blackBackground .list-nav .nav-list .nav-item:not(.active) a,
-.blackBackground li .tag,
-.blackBackground li .meta-container,
-.blackBackground li .meta-container a,
-.blackBackground li .meta-container .date,
-.blackBackground li .content-main .title,
-.blackBackground li .content-main .abstract a,
-.blackBackground li .content-main .action-list .item,
-.blackBackground li .main .title,
-.blackBackground li .main .description{
-  color: #fff !important; 
-  border-color: #fff !important;
-}
 
 /* 蓝色背景 */
 .view .kleinBackground::before{
@@ -34,20 +21,6 @@
 .kleinBackground, .kleinBackground .main-header .container{
   background-color: #002ea6 !important;
 }
-.kleinBackground .list-nav .nav-list .nav-item:not(.active) a,
-.kleinBackground li .tag,
-.kleinBackground li .meta-container,
-.kleinBackground li .meta-container a,
-.kleinBackground li .meta-container .date,
-.kleinBackground li .content-main .title,
-.kleinBackground li .content-main .abstract a,
-.kleinBackground li .content-main .action-list .item,
-.kleinBackground li .main .title,
-.kleinBackground li .main .description{
-  color: #ffe78f !important; 
-  border-color: #ffe78f !important;
-}
-
 /* 粉色背景 */
 .view .pinkBackground::before{
   background-color: #f9c1d2;
@@ -55,35 +28,32 @@
 .pinkBackground, .pinkBackground .main-header .container{
   background-color: rgba(294, 192, 210, 1) !important; 
 }
-.pinkBackground .list-nav .nav-list .nav-item:not(.active) a,
-.pinkBackground li .tag,
-.pinkBackground li .meta-container,
-.pinkBackground li .meta-container a,
-.pinkBackground li .meta-container .date,
-.pinkBackground li .content-main .title,
-.pinkBackground li .content-main .abstract a,
-.pinkBackground li .content-main .action-list .item,
-.pinkBackground li .main .title,
-.pinkBackground li .main .description{
-  color: #fff !important; 
-  border-color: #fff !important;
-}
 
 
 /* ---------------------字体--------------------- */
 
 /* 白色字体 */
-.whiteFontcolor .nav-item:not(.active),
-.whiteFontcolor .nav-item:not(.active) .text,
-.whiteFontcolor .nav-item:not(.active) a,
-.whiteFontcolor .title{
+.whiteFontcolor .nav-item:not(.active),   /*列表 顶部nav 等*/
+.whiteFontcolor .nav-item:not(.active) a, /*列表 顶部nav 等*/
+.whiteFontcolor li .meta-container a,     /*列表 作者文字等*/
+.whiteFontcolor li .meta-container .date, /*列表 时间*/
+.whiteFontcolor li .main .title,          /*列表 广告title*/
+.whiteFontcolor li .main .description,    /*列表 广告 描述*/
+.whiteFontcolor li .content-main .title,  /*列表 文章title*/
+.whiteFontcolor li .content-main .abstract a,   /*列表 文章 描述*/
+.whiteFontcolor li .content-main .action-list .item{    /*列表 文章 观看 评论 点赞*/
   color: #fff !important; 
 }
-/* 黄色字体 */
-.napoliFontcolor .nav-item:not(.active),
-.napoliFontcolor .nav-item:not(.active) .text,
-.napoliFontcolor .nav-item:not(.active) a,
-.napoliFontcolor .title{
+/* 黄色 */
+.napoliFontcolor .nav-item:not(.active),   /*列表 顶部nav 等*/
+.napoliFontcolor .nav-item:not(.active) a, /*列表 顶部nav 等*/
+.napoliFontcolor li .meta-container a,     /*列表 作者文字等*/
+.napoliFontcolor li .meta-container .date, /*列表 时间*/
+.napoliFontcolor li .main .title,          /*列表 广告title*/
+.napoliFontcolor li .main .description,    /*列表 广告 描述*/
+.napoliFontcolor li .content-main .title,  /*列表 文章title*/
+.napoliFontcolor li .content-main .abstract a,   /*列表 文章 描述*/
+.napoliFontcolor li .content-main .action-list .item{    /*列表 文章 观看 评论 点赞*/
   color: #ffe78f !important; 
 }
 

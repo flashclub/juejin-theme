@@ -37,14 +37,22 @@
       "type": "img"
     },
     {
+      "description":  "第二行 nav",
       "targetElementClassName": "#juejin .nav-list.left",
       "className": "",
       "selector": "querySelector",
       "type": "fontcolor"
     },
     {
+      "description":  "顶部 nav",
       "targetElementClassName": "#juejin header .phone-hide",
       "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin .entry-list-container",
+      "className": "whiteFontcolor",
       "selector": "querySelector",
       "type": "fontcolor"
     }
@@ -63,6 +71,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
+      "className": "blackBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "whiteImg",
       "selector": "querySelector",
@@ -81,22 +107,10 @@
       "type": "fontcolor"
     },
     {
-      "targetElementClassName": "#juejin header.list-header",
-      "className": "blackBackground",
+      "targetElementClassName": "#juejin .entry-list-container",
+      "className": "whiteFontcolor",
       "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".view-nav",
-      "className": "blackBackground",
-      "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
-      "className": "blackBackground",
-      "selector": "querySelectorAll",
-      "type": "background"
+      "type": "fontcolor"
     }
   ],
 
@@ -114,6 +128,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
+      "className": "",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "",
       "selector": "querySelector",
@@ -132,22 +164,10 @@
       "type": "fontcolor"
     },
     {
-      "targetElementClassName": "#juejin header.list-header",
+      "targetElementClassName": "#juejin .entry-list-container",
       "className": "",
       "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".view-nav",
-      "className": "",
-      "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
-      "className": "",
-      "selector": "querySelectorAll",
-      "type": "background"
+      "type": "fontcolor"
     }
   ],
   "klein": [
@@ -164,6 +184,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
+      "className": "kleinBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "whiteImg",
       "selector": "querySelector",
@@ -182,22 +220,10 @@
       "type": "fontcolor"
     },
     {
-      "targetElementClassName": "#juejin header.list-header",
-      "className": "kleinBackground",
+      "targetElementClassName": "#juejin .entry-list-container",
+      "className": "napoliFontcolor",
       "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".view-nav",
-      "className": "kleinBackground",
-      "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
-      "className": "kleinBackground",
-      "selector": "querySelectorAll",
-      "type": "background"
+      "type": "fontcolor"
     }
   ],
   "pink": [
@@ -214,6 +240,24 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin header.list-header",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".view-nav",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
+      "className": "pinkBackground",
+      "selector": "querySelectorAll",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "whiteImg",
       "selector": "querySelector",
@@ -232,22 +276,10 @@
       "type": "fontcolor"
     },
     {
-      "targetElementClassName": "#juejin header.list-header",
-      "className": "pinkBackground",
+      "targetElementClassName": "#juejin .entry-list-container",
+      "className": "whiteFontcolor",
       "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".view-nav",
-      "className": "pinkBackground",
-      "selector": "querySelector",
-      "type": "background"
-    },
-    {
-      "targetElementClassName": ".entry-list-wrap .entry-list, .entry-list-wrap .entry-list .entry",
-      "className": "pinkBackground",
-      "selector": "querySelectorAll",
-      "type": "background"
+      "type": "fontcolor"
     }
   ],
   "allThemeClass": {
