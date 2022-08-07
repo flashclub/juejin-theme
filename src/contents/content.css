@@ -18,12 +18,22 @@
 .view .kleinBackground::before{
   background-color: #002ea6;
 }
+.kleinBackground .entry-list-container {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
 .kleinBackground, .kleinBackground .main-header .container{
   background-color: #002ea6 !important;
 }
 /* 粉色背景 */
 .view .pinkBackground::before{
   background-color: #f9c1d2;
+}
+.pinkBackground .entry-list-container {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .pinkBackground, .pinkBackground .main-header .container{
   background-color: rgba(294, 192, 210, 1) !important; 
@@ -78,5 +88,11 @@
   background: #fff;
   box-shadow: 0 0 5px 5px #fff;
 }
-
+.kleinImg{
+  background: #002ea6;
+}
+.pinkImg{
+  background: #f9c1d2;
+  /* box-shadow: 0 0 5px 5px #f9c1d2; */
+}
 

@@ -116,7 +116,7 @@ header.main-header.colorsBackground{
 
   background-repeat: no-repeat;
   /* 调用动画 */
-  animation: 10s move linear infinite;
+  animation: move 5s linear infinite;
   width: 100%;
   height: 100vh;
   max-height: 100vh;

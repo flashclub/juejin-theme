@@ -36,8 +36,13 @@ class ChangeColor {
   }
   async init() {
     const data = await this.getData("theme")
-    // console.log('content theme data---', data);
-
+    console.log('content theme data---', chrome.runtime);
+    chrome.runtime.connect().onDisconnect.addListener(function() {
+      // clean up when content script gets disconnected
+      // 一个tab连接两次时会断开一次
+      console.log('断开链接');
+      
+    })
     chrome.runtime.sendMessage({ theme: data }, async (res) => {
       // console.log('--content res--', res);
 
@@ -180,6 +185,11 @@ class ChangeColor {
             selector,
             targetElementClassName
           )
+          if (!targetElement) {
+            continue;
+          }
+          console.log('切换颜色 class，old: ', this.nowClass.old[type] , 'new: ',className);
+          
           // 旧的是dark 新的是 ''
           // 旧的是'' 新的是dark
           // 旧的是dark 新的是klean
@@ -221,9 +231,7 @@ class ChangeColor {
   }
 
   private canRemoveClass(selector, element) {
-    return document[selector](element)
-      ? document[selector](element)
-      : document.querySelector("body")
+    return document[selector](element) || null
   }
 }
 let oldHref = document.location.href

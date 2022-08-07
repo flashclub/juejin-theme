@@ -31,6 +31,18 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin nav ul li.nav-item.notification",
+      "className": "colorsBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin nav ul li.nav-item.menu",
+      "className": "colorsBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "",
       "selector": "querySelector",
@@ -89,18 +101,32 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin nav ul li.nav-item.notification",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin nav ul li.nav-item.menu",
+      "className": "blackBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "whiteImg",
       "selector": "querySelector",
       "type": "img"
     },
     {
+      "description": "第二行 nav",
       "targetElementClassName": "#juejin .nav-list.left",
       "className": "whiteFontcolor",
       "selector": "querySelector",
       "type": "fontcolor"
     },
     {
+      "description": "顶部 nav",
       "targetElementClassName": "#juejin header .phone-hide",
       "className": "whiteFontcolor",
       "selector": "querySelector",
@@ -146,18 +172,32 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin nav ul li.nav-item.notification",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin nav ul li.nav-item.menu",
+      "className": "",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "",
       "selector": "querySelector",
       "type": "img"
     },
     {
+      "description": "第二行 nav",
       "targetElementClassName": "#juejin .nav-list.left",
       "className": "",
       "selector": "querySelector",
       "type": "fontcolor"
     },
     {
+      "description": "顶部 nav",
       "targetElementClassName": "#juejin header .phone-hide",
       "className": "",
       "selector": "querySelector",
@@ -202,18 +242,32 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin nav ul li.nav-item.notification",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin nav ul li.nav-item.menu",
+      "className": "kleinBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "whiteImg",
       "selector": "querySelector",
       "type": "img"
     },
     {
+      "description": "第二行 nav",
       "targetElementClassName": "#juejin .nav-list.left",
       "className": "napoliFontcolor",
       "selector": "querySelector",
       "type": "fontcolor"
     },
     {
+      "description": "顶部 nav",
       "targetElementClassName": "#juejin header .phone-hide",
       "className": "napoliFontcolor",
       "selector": "querySelector",
@@ -258,8 +312,20 @@
       "type": "background"
     },
     {
+      "targetElementClassName": "#juejin nav ul li.nav-item.notification",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
+      "targetElementClassName": "#juejin nav ul li.nav-item.menu",
+      "className": "pinkBackground",
+      "selector": "querySelector",
+      "type": "background"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
-      "className": "whiteImg",
+      "className": "pinkImg",
       "selector": "querySelector",
       "type": "img"
     },
