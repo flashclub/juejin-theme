@@ -1,0 +1,121 @@
+/* https://blog.csdn.net/weixin_52263227/article/details/121639848 */
+body.colorsBackground{
+  max-height: 100vh !important;
+}
+header.main-header.colorsBackground{
+  /* background-color: #fff !important; */
+}
+.view-nav.colorsBackground::before{
+  height:233%;
+}
+.theme-colors {
+  /* position: relative; */
+  /* z-index: 1; */
+  /* width: auto; */
+  /* height: auto; */
+}
+
+@keyframes move {
+
+  /* 动画初始状态，和结束状态 */
+  0%,
+  100% {
+    /* 以屏幕长的一边计算，控制它们的大小 */
+    background-size:
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
+
+    /* 设置位置 */
+    background-position:
+      -80Vmax -80vmax,
+      60Vmax -30vmax,
+      10Vmax 10vmax,
+      -30Vmax -10vmax,
+      50Vmax 50vmax;
+  }
+
+  25% {
+    background-size:
+      100vmax 100vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      60vmax 60vmax;
+
+    /* 设置位置 */
+    background-position:
+      -60Vmax -60vmax,
+      50Vmax -40vmax,
+      0Vmax 10vmax,
+      -40Vmax -20vmax,
+      40Vmax 40vmax;
+  }
+
+  50% {
+    background-size:
+      90vmax 90vmax,
+      100vmax 100vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      60vmax 60vmax;
+
+    /* 设置位置 */
+    background-position:
+      -70Vmax -70vmax,
+      40Vmax -40vmax,
+      0Vmax 10vmax,
+      -50Vmax -30vmax,
+      30Vmax 30vmax;
+  }
+
+  75% {
+    background-size:
+      80vmax 80vmax,
+      70vmax 70vmax,
+      80vmax 80vmax,
+      70vmax 70vmax,
+      50vmax 50vmax;
+
+    /* 设置位置 */
+    background-position:
+      -60Vmax -60vmax,
+      60Vmax -30vmax,
+      10Vmax 10vmax,
+      -40Vmax -40vmax,
+      50Vmax 50vmax;
+  }
+}
+
+.theme-colors{
+  content: "";
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+  background-size: 50% 100%;
+}
+
+body.colorsBackground #__nuxt {
+  position: relative;
+  z-index: 1;
+}
+
+.colorsBackground .entry-list-container {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(200px);
+  background: transparent !important;
+}
+
+.colorsBackground header .container{
+  background-color: #fff;
+}
+.colorsBackground {
+  /* backdrop-filter: blur(50px); */
+  background: transparent !important;
+}
