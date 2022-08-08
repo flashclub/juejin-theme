@@ -3,6 +3,8 @@ import type { PlasmoContentScript } from "plasmo"
 import "./content.css"
 import "./colors.css"
 
+import SelectChangeColor from './select';
+
 import { Storage } from "@plasmohq/storage"
 
 export const config: PlasmoContentScript = {
@@ -237,6 +239,7 @@ class ChangeColor {
 let oldHref = document.location.href
 window.addEventListener("load", () => {
   console.log("content script loaded")
+  // new SelectChangeColor()
   const changeColor = new ChangeColor()
   var bodyList = document.querySelector("body")
   var observer = new MutationObserver(function (mutations) {
