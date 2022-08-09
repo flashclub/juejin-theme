@@ -1,6 +1,20 @@
 {
   "colors": [
     {
+      "description": "文章页面 文章背景",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "articleBackground"
+    },
+    {
+      "description": "文章页面 内容",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
       "targetElementClassName": "body",
       "className": "colorsBackground",
       "selector": "querySelector",
@@ -113,6 +127,13 @@
       "type": "background"
     },
     {
+      "description": "文章页面",
+      "targetElementClassName": "#juejin .article",
+      "className": "articleBlackBackground",
+      "selector": "querySelector",
+      "type": "articleBackground"
+    },
+    {
       "targetElementClassName": "#juejin header .logo img",
       "className": "whiteImg",
       "selector": "querySelector",
@@ -137,10 +158,30 @@
       "className": "whiteFontcolor",
       "selector": "querySelector",
       "type": "fontcolor"
+    },
+    {
+      "targetElementClassName": "#juejin .article",
+      "className": "whiteFontcolor",
+      "selector": "querySelector",
+      "type": "fontcolor"
     }
   ],
 
   "light": [
+    {
+      "description": "文章页面 文章背景",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "articleBackground"
+    },
+    {
+      "description": "文章页面 内容",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
     {
       "targetElementClassName": "body",
       "className": "",
@@ -212,6 +253,20 @@
   ],
   "klein": [
     {
+      "description": "文章页面 文章背景",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "articleBackground"
+    },
+    {
+      "description": "文章页面 内容",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
+    {
       "targetElementClassName": "body",
       "className": "kleinBackground",
       "selector": "querySelector",
@@ -281,6 +336,20 @@
     }
   ],
   "pink": [
+    {
+      "description": "文章页面 文章背景",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "articleBackground"
+    },
+    {
+      "description": "文章页面 内容",
+      "targetElementClassName": "#juejin .article",
+      "className": "",
+      "selector": "querySelector",
+      "type": "fontcolor"
+    },
     {
       "targetElementClassName": "body",
       "className": "pinkBackground",
@@ -357,6 +426,7 @@
     "dark": {
       "background": "blackBackground",
       "fontcolor": "whiteFontcolor",
+      "articleBackground": "articleBlackBackground",
       "img": "whiteImg"
     },
     "light": {

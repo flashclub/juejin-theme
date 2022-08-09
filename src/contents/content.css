@@ -13,6 +13,10 @@
 .blackBackground, .blackBackground .main-header .container{
   background-color: #22222d !important; 
 }
+.articleBlackBackground,
+.articleBlackBackground .markdown-body{
+  background-color: #2f2f37 !important; 
+}
 
 /* 蓝色背景 */
 .view .kleinBackground::before{
@@ -66,6 +70,10 @@
   font-size: 1.5rem;
   position: relative;
   z-index: 10;
+}
+.whiteFontcolor .article-title,
+.whiteFontcolor .markdown-body{
+  color: #fff !important;
 }
 /* 黄色 */
 .napoliFontcolor .nav-item:not(.active),   /*列表 顶部nav 等*/
