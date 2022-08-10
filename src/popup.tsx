@@ -6,7 +6,12 @@ import "./popup.css"
 function IndexPopup() {
   const [data, setData] = useState("")
   const storage = new Storage({ area:"local"})
-
+  // chrome.runtime.connect().onDisconnect.addListener(function() {
+  //   // clean up when content script gets disconnected
+  //   // 一个tab连接两次时会断开一次
+  //   console.log('断开链接');
+    
+  // })
   async function clickDark(theme) {
     console.log("点击了", theme)
     await storage.set("theme", theme)

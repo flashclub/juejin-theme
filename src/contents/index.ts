@@ -4,6 +4,7 @@ import "./content.css"
 import "./colors.css"
 
 import SelectChangeColor from './select';
+import htmlToMd from './htmlToMd';
 
 import { Storage } from "@plasmohq/storage"
 
@@ -34,6 +35,7 @@ class ChangeColor {
   alreadyInitOldType: boolean = false
   constructor() {
     console.log("初始化", this.config, this.classList)
+    new htmlToMd()
     this.init()
   }
   async init() {
@@ -239,6 +241,7 @@ class ChangeColor {
 let oldHref = document.location.href
 window.addEventListener("load", () => {
   console.log("content script loaded")
+  // 左键选择
   // new SelectChangeColor()
   const changeColor = new ChangeColor()
   var bodyList = document.querySelector("body")
