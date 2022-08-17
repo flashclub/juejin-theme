@@ -11,12 +11,16 @@ class StartServer {
   storage: any = new Storage({ area: "local" })
   constructor() {
     this.init()
+    this.relodPage()
   }
   init() {
+    chrome.runtime.onUpdateAvailable.addListener(
+      function(){
+        chrome.runtime.reload()
+      }
+    )
     chrome.runtime.onInstalled.addListener(async () => {
       const data = await this.getData("theme")
-      
-      console.log("插件安装了 获取data", data )
       if (data) {
         this.localStorageData = data
       } else {
@@ -34,6 +38,22 @@ class StartServer {
   }
   async getData(key) {
     return await this.storage.get(key)
+  }
+  relodPage() {
+    chrome.tabs.query({}, (tabs) => {
+      for (var i = 0; i < tabs.length; i++) {
+        try {
+          const location = new URL(tabs[i].url)
+          const host = location.host
+          if (host.includes("juejin.cn")) {
+            chrome.tabs.reload(tabs[i].id)
+            console.log('初始化 刷新', tabs[i].id);
+          }
+        } catch (e) {
+          console.log("报错--", e)
+        }
+      }
+    })
   }
   private setIcon() {
     const path = this.localStorageData == "light" ? lightImage : darkImage
