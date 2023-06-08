@@ -4,7 +4,7 @@ import "./content.css"
 import "./colors.css"
 
 import SelectChangeColor from './select';
-// import htmlToMd from './htmlToMd';
+import htmlToMd from './htmlToMd';
 
 import { Storage } from "@plasmohq/storage"
 
@@ -35,7 +35,7 @@ class ChangeColor {
   alreadyInitOldType: boolean = false
   constructor() {
     console.log("初始化", this.config, this.classList)
-    // new htmlToMd()
+    new htmlToMd()
     this.init()
   }
   async init() {
